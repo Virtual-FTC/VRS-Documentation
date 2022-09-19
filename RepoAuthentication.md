@@ -1,5 +1,16 @@
 
-Using Package Repository(required for viewing ConstructorKit)
+## Using Package Repository(required for using ConstructorKit)
+
+### Add to New Unity Project
+Go to Window->Package Manager, click gear button on top right. Advanced Project Settings.
+Add a scoped registry. 
+- Name-Doesnt matter (VFTC?)
+- URL-https://repo.vrobotsim.online:4879
+- scope-com.vftc
+
+then click apply. You need the auth file to successfully get package lists.
+
+### Authenticating
 
 (New User) In command line, type:
 ```
