@@ -14,7 +14,7 @@ If you get an error saying there's no such thing as npm, you need to install [no
  
 Otherwise it will ask you to create an account & password. If there are no slots available contact ryan. @ rwine6502@gmail.com 
  
-Once you have created an account, go to your home folder(Its the folder that matches your username on the desktop). If you cant find it, type explorer %userprofile% in the command prompt. Create a file called .upmconfig.toml - open it in notepad. Paste the following:
+Once you have created an account, go to your home folder(Its the folder that matches your username on the desktop). If you cant find it, type ```explorer %userprofile%``` in the command prompt. Create a file called .upmconfig.toml - open it in notepad. Paste the following:
 
 ```
 [npmAuth."https://repo.vrobotsim.online:4879/"]
