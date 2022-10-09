@@ -20,7 +20,7 @@ Each custom bot is going to be addressable, so it will be stored on the web serv
 This is done by clicking 'custom bot' and entering the name of the robot(addressable name).
 
 ### Components
-**DrivetrainMovement**: DriveReceiverSpinningWheels<br/>
+DrivetrainMovement: **DriveReceiverSpinningWheels**<br/>
 Sliding: **DriveReceiverTransformMove** - this moves an object up or down, with a limitation on movement. <br/>
 Rotation: **DriveReceiverTransformRotate** - this rotates an object with a limitation.(used on SwingingArmTall)<br/>
 Rotation: LockGlobalRotation - this restricts an object to a specifical rotation. useful if you need joints to follow along with a movement but not rotate.<br/>
@@ -43,4 +43,7 @@ Rotation: LockRelativePosition - this lock an object to a specific distance from
 ## More Details
 
 ### 6. Set up Slide Drives Rotation
+
+#### DriveReceiverTransformMove
+
 
