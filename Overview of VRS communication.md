@@ -1,7 +1,7 @@
-An overview of communication in the VRS  https://bit.ly/VRS-Communication 
+An overview of communication in the VRS  https://bit.ly/VRS-Communication (note this might not be the complete picture)
 Design doc https://drive.google.com/file/d/1K_zGVQKhtXTy55upA_gN6bQZP8jF3CoG/view?usp=sharing 
 Google Blockly & OnbotJava → Converts to Java code → Saved to .java file → Java Applet uses file and compiles .java file → Runs the compiled (I think it should be java byte-code) and establishes local socket between Electron App and Java Applet [data packet details → output commands: motor, etc. and input commands: encoders, sensors, etc.]
- (ee alo how to make blocks)
+ (see alo how to make blocks)
 
 game site #1 https://www.vrobotsim.online/homepage.html
 game site #2  https://powerplay.vrobotsim.online/homepage.html
