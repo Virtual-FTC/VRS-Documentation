@@ -1,0 +1,20 @@
+IMU Implementation as of 10/7/2022
+
+Very limited implementation.
+
+Can create bno055imuParameters variables and set individual properties (e.g., units, addresses, etc.) although these properties are largely ignored in this implementation.
+
+Implemented IMU Functions
+Initialize the IMU with a parameters variable.
+Calibration status will always indicate the device is calibrated.
+Accelerations implemented in meters/sec^2
+Angular Velocities reported in radians/second.
+AngularOrientation property only (i.e., “call getAngularOrientation” not implemented yet). Individual axes can be accessed using Orientation utility block. Everything is reported in degrees. The value passed back is the absolute orientation WRT the field. (Blue robot has initial heading of 90 degrees, red robot has initial heading of -90 degrees).
+
+Potential issues:
+I’m not aware of any issues at this time, but 
+its entirely possible that the axes don’t match the REV device in direction or orientation
+The range of values may not match REV device (e.g., are angles supposed to be -180 to 180 or 0 to 360?)
+
+No other functionality is implemented at this time.
+ 
