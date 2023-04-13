@@ -1,0 +1,185 @@
+https://docs.google.com/document/d/1FDePA1ijDLKOvMe7MltFFlj9UoQGEKIXwrbK4TDlkxk/edit?usp=sharing
+New Unity Game Schematics
+1. Introduction
+I. Notes
+These are the basic schematics for the importer and general Unity game. A lot still needs to be done, so I have detailed as much as I can about the direction I was envisioning to take with all of the different scenes.
+
+The reason it’s so big and comprehensive is to have it planned out from the beginning to have all the features we have talked about that we want for this project instead of having to recreate a new game each year.
+
+Also as an FYI, currently there are conflicting scenes, codes, and assets of this game with the original importer project, so be sure to only edit the assets specific for UIOverhaul. I will eventually go through and clean up all the files. If you want to discuss anything about this plan I’ve designed, feel free to contact me: GavinH.
+
+GitHub Link: https://github.com/Virtual-FTC/PrototypeImporter/tree/uioverhaul 
+
+Assets specific for UIOverhaul: MainScene.unity, UIBehavior.cs, RobotFileManager.cs, RobotConfigManager.cs, RobotManager.cs, WheelScript.cs
+
+Key: Needs to be done     Already Done
+
+II. Division of Labor
+Gavin - Steps 1 & 2 of Config
+
+III. List of Prominent Things to get done First
+1. Have motors/joints work reliably with any type of setup
+2. Setup the GameColliders tab
+3. Get the DriverControl scene robot ready
+4. Import the PowerPlay field
+5. Get scoring/gameplay working for current fields
+
+
+2. General Things (Across multiple scenes)
+I. Main Points
+-How to Use for users understanding the interface
+   -Video based Guide
+   -Text based Guide
+
+-Change Camera Views
+
+-Reset Field/Robot
+
+-Change Field/Robot (Should change to a pop up of a list of titles/short descr./icons)
+
+-Allow viewing/rebinding of controls
+   -Set drivetrain configuration for wheel powers
+   -View/rebind controls for motors/servos
+   -Allow the user to output telemetry info for motors/servos/sensors (This setting is currently not saved in config file)
+
+-Show/Preload amount of primary/secondary game elements
+
+-Sensors
+   -Distance/Color/Touch/IMU
+
+II. Bugs
+-Tab animations can be set in wrong state when gameobject is re-enabled causing weird effects
+
+III. Comments
+-Some strikethroughed comments work for config test but not driver controlled or auto but should be easy to hook up later
+-Make sure everything can run on WEBGL and also try and conserve computing power
+-Sensors have been designed and work for Ultimate Goal, so should be able to copy that code in some aspects
+-The white boxes with the “x [0]” next to it are meant to be images of the primary/secondary game elements with the amount the robot has loaded into it
+
+
+3. Configuration
+I. Main Points
+General
+   -Config specific HowToUse
+
+   -Select Robot and Fields (Files)
+      -Add/Show/Modify/Delete Files
+      -Robots are either Parameter or CAD based robots
+      -Some are Default (Parameter) Files saved via (Resources Folder(?))
+      -Default Files cannot be edited but can be SavedAs then edited
+      -User-made Files are saved/modified to LocalDB
+      -Ability to Download Files as a zip to save info across computers
+      -Ability to view/change description of files
+      -Screenshotted icon for Files
+
+Robot Configurations
+   -Step 1: Create a *Parameter* Robot
+      -
+
+   -Step 1: Create a *CAD* Robot
+      -Load and parse CAD Files
+      -Change main color of robot (Still need to save info)
+      -Set team number and allow positioning of team number on robot
+      -Wheel Config: WheelTypes/Offset/FlipPosition/Colors
+
+   -Step 2: Configure Motors
+      -Display all the motor joints on the main screen
+      -Add/Show/Modify/Delete Motors
+      -Change Name/WheelType/Ratio
+      -Allow overriding for custom torque/encoder count
+      -Test power of motors for correct rotation of joints
+      -Add/Show/Remove Joints/Components/Limits
+      -Change direction or disable joint for component
+      -Change gear ratio and lower/upper limits (Gear ratio not setup for configtest and upper/lower limits sorta work for linear slides)
+
+   -Step 3: Configure Servos
+      -Display all the servos joints on the main screen
+      -Add/Show/Modify/Delete Motors
+      -Same as motors (may want motor functions able to work for servos as well to not lengthen the code too much)
+      -Can set as Continuous or Discrete
+
+   -Step 4: Configure Sensors
+      -Display all the sensors on the main screen
+      -Add/Show/Modify/Delete Sensors
+      -
+
+   -Step 5: Game Elements
+      -Ability to add custom element
+      -
+
+
+Field Configurations
+   -
+
+Config Testing
+   -Add spawner for 1 primary/secondary element in front of robot
+
+II. Bugs
+-Linear slide joint positions are off (Probably on Fusion 360 addon side. Also position is just used for displaying the joint, not for physics)
+
+III. Comments
+-This section is the one I am mainly working on to get working
+-Parameter-based robots have not been designed yet but should allow slight modification to default bots so users can try to simulate their robot without cadding
+-The Sensor/Game Colliders menu have not been setup but I imagine they’ll act the same as the menu system for motors/servos with the added ability to position a sensor symbol like the team number (also not setup)
+-Field Configuration has not been designed yet but should probably work off of the ConstructorKit
+
+
+4. Driver Controlled
+I. Main Points
+-DriverControl specific HowToUse
+
+-User moves starting position Robot/some robot-elements (Wobble Goal)
+
+-Select Programs from “Programmable” section
+
+-Play Gamemode
+   -Select gamemode to play (Full/Auto/Driver/EndGame)
+   -Select Randomization
+   -Press Init>Start to start scripts as well as game
+   -Timer with time left
+   -Scoring for Auto/Teleop/Endgame updated on screen w/ total
+   -Able to tour through scoring options using [i] next to game section (Auto/Teleop…)
+
+-Host/Judges able to add penalties to teams
+
+-Multiplayer Section
+   -
+
+II. Bugs
+
+III. Comments
+-Selecting programs from programmable section would need to interact with localstorage to access programs
+-Scoring and gamemode stuff should probably work off of ConstructorKit
+-Multiplayer not thought out yet but should be able to set people to teams/spectators/judges and set which teams to compete and for which side. Also a chatting system may be good to add. Multiplayer has the big problem however of how we are going to have custom robots work in conjunction with this system.
+
+
+5. Autonomous
+I. Main Points
+UI Points
+   -Remove Gamemode selection/Script selection/Multiplayer tab/Controls tab/HowToUse Button
+
+   -Remove left score and put red/blue auto points on just bottom-right quadrant for more room for bottom buttons
+
+   -Move around and increase UI elements size
+
+Other Points
+   -Send/Receive Script info with website
+   -Send info if changed robot config for blocks naming system
+
+II. Bugs
+
+III. Comments
+-Should try and go for running java programs in Unity instead of parsing java to js since we have the source code and to not create inconsistency between FTC and VRS. This can be worked on later as we can easily just link setmotor power values; the main point is for later running programs in “Robot Arena” section.
+
+
+Physics:
+Realistic:
+Torque/RPM
+
+Problems:
+Forces Can Affect Robot Base
+No Joint Friction in freefall
+Other Wheel Types
+Need Encoder Values
+-> Rotation Values different per joint
+
