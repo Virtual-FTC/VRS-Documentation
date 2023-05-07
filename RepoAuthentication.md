@@ -2,6 +2,17 @@
 ## Using Package Repository(required for using ConstructorKit)
 
 ### Add to New Unity Project
+
+There are 3 ways to add these projects to a unity project. Using the package registry(that lets it automatically grab dependencies), add from Github link, or add manually. Adding manually is the only method that allows you to modify the package scripts easily but the project should be switched to github/registry before pushing it. This is so other people working on the project are able to use the project.
+
+### Manual
+Clone the UPM repo of the packages to your local machine, then go to window->Package Manager and click on the +. Click add from local and point it to the package.json of the package. You might need to add a packages dependencies first. For example, RobotMultiplayer depends on ConstructionKit, so load the CK first. 
+
+### Github
+
+Goto Window->Package Manager and click the +, then select github. Paste the github link into the field and click add.
+
+### Registry
 Go to Window->Package Manager, click gear button on top right. Advanced Project Settings.
 Add a scoped registry. 
 - Name-Doesnt matter (VFTC?)
