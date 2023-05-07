@@ -8,7 +8,8 @@ This is documentation for the VRS project.
 The main robot simulation is run in unity, and is where the user controls the robots with the gamepads. The unity project interfaces with the web side via a .jslib file and an Electron game component. These are in the ConstructionKit package.
 
 #### Packages
-UPM packages are a way of reusing existing code and keeping it seperate from project specific code. Right now we have:
+UPM packages are a way of reusing existing code and keeping it seperate from project specific code. For more info see [here](https://github.com/Virtual-FTC/FTCSimDocumentation/blob/main/RepoAuthentication.md)
+Right now we have:
 - [RobotConstructionKit](https://github.com/Virtual-FTC/UPM-RobotConstructorKit) : Keeps track of scoring, and basic robot operations(grabbing/moving). As well as interfacing with the web app.
 - [VRS Multiplayer](https://github.com/Virtual-FTC/UPM-VRSMultiplayer) : a version of Photon, this also keeps the code for lobby and setting multiplayer game settings
 - [MultiplayerUI](https://github.com/Virtual-FTC/UPM-UI) : sub package of the MP library, contains all ui code(lists, game slots, etc).
