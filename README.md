@@ -24,10 +24,10 @@ Blockly is a section in the programming page of vrs that lets people drag and dr
 
 ##### In Unity
 
-- Encoder Action Manager(Robot Construction Kit): if the gamepad is not active, this component takes input from the javascript code from blockly and sends it to the motors of the players robot. It also records distance driven and sends that back to the blockly code.
-- ElectronFunctions.jslib(Robot Construction Kit): this js file defines all the function calls that the Encoder Action Manager can use to send information out to blockly.
+- **Encoder Action Manager(Robot Construction Kit)**: if the gamepad is not active, this component takes input from the javascript code from blockly and sends it to the motors of the players robot. It also records distance driven and sends that back to the blockly code.
+- **ElectronFunctions.jslib(Robot Construction Kit)**: this js file defines all the function calls that the Encoder Action Manager can use to send information out to blockly.
 
 ##### In Electron
 
-- webgl/index.html : This cannot be overwritten with the default index.html from a unity webgl build, as it contains extra js code to interface with blockly.
-- ftcblockly.js : this parses some of the data coming in and out between blockly and unity.
+- **webgl/index.html** : This cannot be overwritten with the default index.html from a unity webgl build, as it contains extra js code to interface with blockly.
+- **ftcblockly.js** : this parses some of the data coming in and out between blockly and unity.
