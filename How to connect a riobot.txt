@@ -1,0 +1,80 @@
+connect a robot Documentation
+1. Clone the repository:
+   Clone the repository from GitHub using this link: https://github.com/Virtual-FTC/Unity-Hydrogen-Horizons
+ 
+2. Open the project in Unity:
+   Once the repository is cloned, open the Unity Hub and load the project by selecting the folder you just cloned.
+ 
+3. Clone an additional repository:
+   Clone another repository from GitHub: https://github.com/Virtual-FTC/VRS-UnityWebGL-UltimateGoal
+ 
+4. Open the project in Unity:
+   Once the repository is cloned, open the Unity Hub and load the project by selecting the folder you just cloned. Make sure to use version 2020.3.8f1.
+ 
+5. Open the Unity-Hydrogen-Horizons project and export SampleScene.
+
+
+
+6. Import this exported package into Ultimate Goal.
+
+7. After importing, if you open the sample scene and encounter a pink material issue:
+
+8. Select all the Material files used in the Unity-Hydrogen-Horizons project's SampleScene.
+
+
+9. Upgrade the selected materials to UniversalRP Materials to fix the issue.
+
+10. Once you confirm that the sample scene looks good, open the Unity-Hydrogen-Horizons project's repository location, except for the .git folder, and delete everything else.
+
+11. Now, go to the VRS-UnityWebGL-UltimateGoal repository folder, copy everything except the .git folder, and paste it into the Unity-Hydrogen-Horizons project's repository location.
+
+12. Reopen Unity Hub and add the Unity-Hydrogen-Horizons project where you copied the data.
+
+13. Confirm if everything is working as expected, such as the sample scene is good and functions correctly when played.
+
+14. Commit the project to GitHub.
+
+15. Group files and put them under a parent called "physical field."
+
+16. Arrange the hierarchy like this: Scene -> Field2020.
+
+
+17. Import the first global robot v1.fbx into Assets/Models/first global robot v1.fbx.
+
+18. Open Assets/Resources/PhotonPrefabs/PhotonNetworkPlayer.prefab.
+
+19. Drag and drop Assets/Models/first global robot v1.fbx into Assets/Resources/PhotonPrefabs/PhotonNetworkPlayer.prefab.
+
+20. After hiding the old robot files, it should look like this:
+21. Turn off ScoringField as it is related to the older Ultimate Goal.
+
+22. Connect a Logitech joystick and test if the robot moves and shoots when playing.
+
+23. Build for WebGL.
+
+
+24. Clone https://github.com/Virtual-FTC/VRS-Local-ElectronApp-base
+
+25. Switch to the "Hydrogen-Horizons" branch: https://github.com/Virtual-FTC/VRS-Local-ElectronApp-base/tree/hydrogen-horizon
+
+26. Hold Shift in the above repository folder and open Windows PowerShell here.
+
+27. Type "npm i" and press Enter. Make sure you have everything installed as mentioned in https://github.com/Virtual-FTC/VRS-Local-ElectronApp-base/tree/hydrogen-horizon#readme
+
+28. When the WebGL build is complete, copy the files from the build folder into the Electron app at path VRS-Local-ElectronApp-base\webgl.
+
+29. Open index.html and compare it with https://raw.githubusercontent.com/Virtual-FTC/VRS-Local-ElectronApp-base/main-ug/webgl/index.html
+
+30. Find this line: }).then((unityInstance) => {.
+    In the "ug" branch, it has some extra code compared to our build, and we need that code in our build too. So, copy from there till </script>, and paste it into our build code. Then, save index.html.
+
+31. When "npm i" is done, run another command "npm start." It will open the Electron app.
+
+32. Open the programming section.
+
+33. You will see "Import robot" in the project.
+
+
+
+
+
