@@ -1,6 +1,6 @@
-# Manual Creation
+# Manual Robot Creation
 
-This is for manually creating a new bot for the power play app. Repo: https://github.com/VRS-Power-Play/VRSConstructorKit-PP .
+This is for manually creating a new robbot for the power play app. Repo: https://github.com/VRS-Power-Play/VRSConstructorKit-PP .
 
 ## Overview
 
