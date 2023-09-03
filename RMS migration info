@@ -1,0 +1,26 @@
+Instructions:
+Open terminal and run: git submodule add https://github.com/Virtual-FTC/RSM-CodeExecutionModule modules/RSM-CodeExecutionModule
+Delete from /assets/js/ the following files
+beautify.js
+custom-converter.js
+format4js.js
+java-to-javascript.js (this file won’t be used ever)
+programExecution.js
+(Do not delete programpageScript.js)
+Move the /blocks/fonts folder and the /blocks/lessons folder into /assets
+Create a new /assets/images folder and toss all the jpg, png, and webp into it. This is just cleanup while we’re here. Also, the leftover assets/js.zip file can be deleted
+Delete the entire /blocks folder
+Now to use ctrl+shift+F to find and replace broken file paths
+/blocks/fonts —> /assets/fonts
+/blocks/lessons —> /assets/lessons
+/assets/js/beautify —> /modules/RSM-CodeExecutionModule/src/beautify
+/assets/js/custom-converter —> /modules/RSM-CodeExecutionModule/src/custom-converter
+/assets/js/format4js —> /modules/RSM-CodeExecutionModule/src/format4js
+Nothing should come up for java-to-javascript as it’s been deleted
+/assets/js/programExecution —> /modules/RSM-CodeExecutionModule/src/programExecution
+./blocks/ —> /modules/RSM-CodeExecutionModule/blocks/
+Now to fix the images. Enable regex in the search bar (It looks like .*)
+/assets/([\w-]+).png —> /assets/images/$1.png
+/assets/([\w-]+).jpg —> /assets/images/$1.jpg
+/assets/([\w-]+).webp —> /assets/images/$1.webp
+Add <script src="./modules/RSM-CodeExecutionModule/src/javascript-to-blocks-wrapper.js"></script> to the bottom of programpage.html, under …/blocks/procedures.js
