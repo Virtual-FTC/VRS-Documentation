@@ -24,3 +24,8 @@ Now to fix the images. Enable regex in the search bar (It looks like .*)
 /assets/([\w-]+).jpg —> /assets/images/$1.jpg
 /assets/([\w-]+).webp —> /assets/images/$1.webp
 Add <script src="./modules/RSM-CodeExecutionModule/src/javascript-to-blocks-wrapper.js"></script> to the bottom of programpage.html, under …/blocks/procedures.js
+
+
+<!--note is the blocks dont load run-->
+git submodule init
+git submodule update
