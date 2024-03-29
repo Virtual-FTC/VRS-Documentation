@@ -1,3 +1,6 @@
+git submodule init
+git submodule update
+
 Instructions:
 Open terminal and run: git submodule add https://github.com/Virtual-FTC/RSM-CodeExecutionModule modules/RSM-CodeExecutionModule
 Delete from /assets/js/ the following files
