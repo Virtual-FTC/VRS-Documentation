@@ -15,7 +15,7 @@ Right now we have:
 - [MultiplayerUI](https://github.com/Virtual-FTC/UPM-UI) : sub package of the MP library, contains all ui code(lists, game slots, etc).
 
 ### Electron
-[Electron](https://www.electronjs.org/) is a standalone app that is essentially chrome, but it puts all the web code in one spot that allows for testing on a local machine. the VRS-Electron app can be run by running ```npm install``` at the command line(only once), and then ```npm start```.
+[Electron](https://www.electronjs.org/) is a standalone app that is essentially chrome, but it puts all the web code in one spot that allows for testing on a local machine. the VRS-Electron app can be run by running ```npm install``` at the command line(only once), and then ```npm start```.  Video to look over after you load NodeJS  https://youtu.be/n2BzAl3uNYc and then this https://youtu.be/XiI0JMDsJes ****
 
 #### Blockly
 Blockly is a section in the programming page of vrs that lets people drag and drop pieces of code to program their robots. It sends and gets motor and sensor information to the unityapp via the jslib file.
