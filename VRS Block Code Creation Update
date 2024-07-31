@@ -1,0 +1,275 @@
+https://docs.google.com/document/d/1qJDuDqoVFn8U3pvv4SBeqaJaj73_x-LOq52FaqnlfOY/edit?usp=sharing    Thanks Michael Vasudev <michael.vasudev@gmail.com> 
+
+The following document outlines my observations on the structuring required to build the VRS blocks and have them show up in the interface.  Any notes I have included about line numbers in the code are based on the most recent version of the main operating file that I know I worked on.  Within this operating code all of the block data is stored within the file titled local.html
+Note that the creation and definition of each block is fundamentally based on 3 components: the XML code creating and formatting the block, the XML code creating the categories and positioning the blocks within the interface, and the Java code that interacts with the block structure to communicate with the rest of the simulator.  Here I have included descriptions of how to develop the first two steps of this, but the part pertaining to the Java code was not performed by myself, and so the procedure for developing that is not included here.
+
+Block Creation (Lines 663-1421)
+	The lines above include every block that I developed within the code.  I will include here some instructions about how to develop blocks, but if you are having a hard time formatting a particular block just find one in the system that is similar to the one you are trying to create and use that as a base template.
+
+Basic Block Creation
+	The following code shows the most basic block that can be created.  This block has no inputs or options.
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+      },
+
+
+
+
+
+Adding a tooltip
+	Adds a tooltip that will appear when the mouse is hovered over the block for a few seconds
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block"
+      },
+
+Changing block color
+	Add the following line to change the color of the block
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581" // Use color code to select block color
+      },
+
+
+
+Defining whether the block can connect from the top or bottom
+Block can only be connected to previous blocks, but no blocks can be connected after it
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+        "previousStatement": null,  // Include this line if you want the block to be able to add a block above
+      },
+
+Block can only be used to start code with blocks connected after it
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+      },
+
+Blocks can be connected above and below
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+	  "previousStatement": null,  // Include this line if you want the block to be able to add a block above
+      },
+
+Adding Block Inputs
+	Most blocks will require some sort of input, so knowing how to add inputs is very important.  This step requires the modification of the “message0” command and the addition of the “args0” command, both of which are shown in an example below:
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block %1", // This is the text that will appear on the block. This message will have 1 input
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+        "previousStatement": null,  // Include this line if you want the block to be able to add a block above
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "gamepadSelection",
+            "options": [
+              ["option1","option1"],
+              ["option2","option2"]
+            ]
+          },
+        ]
+      },
+
+Modifying the Inputs
+	There are two primary types of inputs, dropdown menus and number inputs.  Here are examples of how to do both.
+Dropdown Menu
+"args0": [
+          {
+            "type": "field_dropdown",
+            "name": "gamepadSelection",
+            "options": [
+              ["option1","option1"],
+              ["option2","option2"]
+            ]
+          },
+        ]
+
+	The type line will stay the same each time you want a dropdown of options to select from.  However, you do want to change the name of the dropdown menu, which is important for communicating the inputs to the simulator.  You can have as many options within the dropdown as you want, just be sure to keep them within the outermost [ ] of the “options” command, and add a , between each option.  NOTE: You see that each selection is included twice.  The first input is the text that will be seen within the dropdown menu, and the second input is the command used to tell the code which option was chosen. I would recommend having these two options always be identical.
+
+
+
+Field Input
+	To change the input type to input instead of a dropdown menu, change the “type” to “field_input”, and include a name for the input.  Finally, the “text” section will dictate what is shown in this space as a default.
+"args0": [
+          {
+            "type": "field_input",
+            "name": "text1",
+            "text": "RunMode"
+          },
+        ]
+
+Numerical Input
+Changes the block input into an open ended numerical input
+"args0": [
+          {
+            "type": "input_value",
+            "name": "input1",
+            "align": "RIGHT"
+          },
+        ]
+
+Dummy Input
+Creates a flat side. Is only used for block formatting. In the example below I also changed the “message0” line as follows to show the effect of using the dummy input.
+
+"message0": "Line 1 %1 Line 2",
+
+"args0": [
+          {
+            "type": "input_dummy"
+          },
+        ]
+Result: 
+
+Adding multiple block inputs
+	To expand the number of inputs for a given block, simply modify the “message0” command line.  The following examples show the testing block with various numbers of inputs.
+1 Input:
+"message0": "Option 1 %1",
+
+2 Inputs:
+"message0": "Option 1 %1 Option 2 %2",
+
+3 Inputs:
+"message0": "Option 1 %1 Option 2 %2 Option 3 %3",
+
+NOTE: For each input that you add you must add an independent section WITHIN the “args0” command structure.  As an example, the block formatting used to achieve the block for the 3 input option shown above is included below:
+
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Option 1 %1 Option 2 %2 Option 3 %3", // This is the text that will appear on the block. This message will have 1 input
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+        "previousStatement": null,  // Include this line if you want the block to be able to add a block above
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "text1",
+            "text": "Option 1"
+          },
+          {
+            "type": "field_input",
+            "name": "text2",
+            "text": "Option 2"
+          },
+          {
+            "type": "field_input",
+            "name": "text3",
+            "text": "Option 3"
+          },
+        ]
+      },
+
+
+
+
+Creating an input block
+	To turn the block from a line that runs a command to a block input, use the “output” command. In place of the “nextstatement” and “previousstatement” commands used to create the command blocks.
+{
+        "type": "testBlock", // This is the name of the block within the code. Use this whenever you need to reference the block
+        "message0": "Text On the Block", // This is the text that will appear on the block. This message will have no inputs
+        "tooltip": "Shows what the block does when mouse is hovered over block",
+        "colour": "#5ba581", // Use color code to select block color
+        // "nextStatement": null,  // Include this line if you want the block to be able to add a block below
+        // "previousStatement": null,  // Include this line if you want the block to be able to add a block above
+        "output": null, // Add this command to turn the block into a input block instead of a command block
+      },
+
+	If you need to add additional inputs to the input block, follow the same process as before using %1, %2, etc. and the “args0” command, as outlined in sections 5 and 6 above.
+
+
+Block Categories and Drop-Down Menus (Lines 267-426)
+	The block categories section is bounded by two lines of code found on line 267 and 426.  The starting and ending lines are as follows:
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+
+
+
+
+  </xml>
+
+Creating a Category
+To create a new category use the following structure, but exchange the category name for the name you want.
+<category name = "Test Category">
+      
+</category>
+
+Changing the Category Color
+To change the color associated with the category, use the following structure for defining the category:
+    <category name = "Test Category" colour="#f58a42">
+
+
+    </category>
+
+
+
+
+
+Adding an item id for connecting the block functionality to the simulator
+I believe that the blocks are able to be connected to the rest of the code 	by this toolboxitemid, which is most likely used to translate the block code to simulator commands.  Use the following command within the category definition line to add the item id.  Note: The id you assign to the category should not have any spaces.
+    <category name = "Test Category" colour="#f58a42" toolboxitemid="TestCategory">
+
+
+    </category>
+
+Adding a Subcategory
+		To add a subcategory simply add another category nested within the start and end lines of the original category.  An example is shown below:
+<category name = "Test Category" colour="#f58a42" toolboxitemid="TestCategory">
+      <category name = "Test Subcategory">
+
+
+      </category>
+    </category>
+
+Definition of Blocks within the Categories and Workspace
+Basic block workspace structure
+The most basic structure required for a block to be defined within the workspace is as follows:
+<category name = "Test Category" colour="#f58a42" toolboxitemid="TestCategory">
+        <block type="testBlock">
+        </block>
+</category>
+	Note that for most blocks this is all that is needed, however, there are certain circumstances where the definition of the block becomes more complex.
+
+Adding predefined numerical inputs to the blocks
+Let’s take for example the dual set power block, found under Actuators->DCMotor->Dual.  
+
+We can see that this block has preset value inputs of 0, however if we define the block as we did in the previous section none of the blocks will show up within that section.  This is because those open ended inputs require an input to show up.  To add those basic inputs, follow the following structure that was used to define the above block within the code (Lines 319-326):
+<block type="setMotorInputDual">
+            <value name="input1">
+              <shadow type="math_number"></shadow>
+            </value>
+            <value name="input2">
+              <shadow type="math_number"></shadow>
+            </value>
+</block>
+
+Note that the names used for the two inputs are exactly the same as the names given to those inputs when the block was created.
+Adding predefined input blocks
+	Some blocks require a different type of input block to be predefined.  This includes the dual set runmode block, which is found under Actuators->DCMotor->Dual.
+
+	To add those inputs, follow the same method as you did for adding the number blocks.
+<block type="setMotorRunModeDual">
+            <value name="input1">
+              <shadow type="runModeOptions"></shadow>
+            </value>
+            <value name="input2">
+              <shadow type="runModeOptions"></shadow>
+            </value>
+          </block>
+
+NOTE: The input blocks here were custom made blocks that I had entitled “runModeOptions”.  
