@@ -1,0 +1,5 @@
+To update Motor Names 
+1.        Go to the game folder
+2.        Open the folder “ config_files”
+3.        Open the file “defaultRobot.json” in a code editor
+4.        Go to “name” : and now you type in  or replace the name inside “	“
