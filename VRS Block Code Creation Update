@@ -1,5 +1,7 @@
 https://docs.google.com/document/d/1qJDuDqoVFn8U3pvv4SBeqaJaj73_x-LOq52FaqnlfOY/edit?usp=sharing    Thanks Michael Vasudev <michael.vasudev@gmail.com> 
 
+FTC's block code can be found at https://github.com/OpenFTC/Extracted-RC/tree/master/Blocks/src/main/assets and can be used as reference.
+
 The following document outlines my observations on the structuring required to build the VRS blocks and have them show up in the interface.  Any notes I have included about line numbers in the code are based on the most recent version of the main operating file that I know I worked on.  Within this operating code all of the block data is stored within the file titled local.html
 Note that the creation and definition of each block is fundamentally based on 3 components: the XML code creating and formatting the block, the XML code creating the categories and positioning the blocks within the interface, and the Java code that interacts with the block structure to communicate with the rest of the simulator.  Here I have included descriptions of how to develop the first two steps of this, but the part pertaining to the Java code was not performed by myself, and so the procedure for developing that is not included here.
 
