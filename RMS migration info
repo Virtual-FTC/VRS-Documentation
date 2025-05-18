@@ -29,6 +29,6 @@ Now to fix the images. Enable regex in the search bar (It looks like .*)
 Add <script src="./modules/RSM-CodeExecutionModule/src/javascript-to-blocks-wrapper.js"></script> to the bottom of programpage.html, under …/blocks/procedures.js
 
 
-<!--note is the blocks dont load run-->
+<!--note if the blocks dont load run line 33/34-->
 git submodule init
 git submodule update
