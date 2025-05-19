@@ -1,0 +1,30 @@
+the VRS 1.0 design Doc https://drive.google.com/file/d/1K_zGVQKhtXTy55upA_gN6bQZP8jF3CoG/view
+letian Image project https://excalidraw.com/#json=eh8MTY-wcUnBHoi7-l0ZM,mH8zt8DYyjgxuP3mG0wHbg
+4 big projects ideas to get to runnng a program like ROADRuner in the VRS
+  Embed a java compiler and runner into the browser.
+    We want to be able to write multiple java files, compile them, and run them all in the browser locally.
+    This requires bundling the javac compiler (graalvm)
+    This requires a runtime in the browser (cheerpj)
+  Write VRS replacements for the FTC SDK
+    We want to be able to run code using our implementations of features like DcMotor, IMU, HardwareMap, etc.
+    We need a lifecycle manager that can selectively initialize, run, and stop opmodes.
+    These need to be written in Java.
+    Consideration for communicating with JavaScript and the Unity WebGL is needed.
+Build a java IDE for the web
+    We want to support directories and multiple java files in our java editor.
+    This involves a file tree selector, editor tabs.
+    Intellisense and auto-import would be nice but are not a priority.
+    We are also looking at rewriting the entire UI in React and have drawn out a prototype on paper.
+Android Studio Plugin with Local VRS( see What about using this Android app approach? : Android App to allow VRS users to use multi-class programs with dependencies (roadrunner, FTClib, etc)
+  https://github.com/Virtual-FTC/VRS-Android-App older )
+    We want to add a button to Android Studio that can deploy robot code to the VRS local app.
+    Ideally doesn’t modify the coding experience.
+    A pipeline that looks promising is: bundling the APK, converting it to JAR, hot swapping our java implementations, adding an entry point, and executing it using the local java runtime.
+    We hope that this supports external libraries, requires investigation for .so files.
+Letian Thoughts 5-13-25 
+    https://docs.google.com/document/d/1gH8iyKFGyteqr0xUYrjKSM0HjLzM-W_6AkrbPJ9rGOE/edit?usp=sharing
+letian Expt #1 5-14 
+  https://docs.google.com/document/d/1dyyOapEA4h8zo1xHjP-cnXdYxexgZ_X0NFIxnZBOw64/edit?usp=sharing
+not just a plug in 
+  https://docs.google.com/document/d/1P5uYHQxH-hNpbL1mzZJXe48UamHBT9pNaXTdI0S-Cw8/edit?usp=sharing
+https://docs.google.com/document/d/1P5uYHQxH-hNpbL1mzZJXe48UamHBT9pNaXTdI0S-Cw8/edit?usp=sharing
