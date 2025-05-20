@@ -13,17 +13,13 @@ connect a robot Documentation
  
 5. Open the Unity-Hydrogen-Horizons project and export SampleScene.
 
-
-
 6. Import this exported package into Ultimate Goal.
 
 7. After importing, if you open the sample scene and encounter a pink material issue:
 
 8. Select all the Material files used in the Unity-Hydrogen-Horizons project's SampleScene.
 
-
 9. Upgrade the selected materials to UniversalRP Materials to fix the issue.
-
 10. Once you confirm that the sample scene looks good, open the Unity-Hydrogen-Horizons project's repository location, except for the .git folder, and delete everything else.
 
 11. Now, go to the VRS-UnityWebGL-UltimateGoal repository folder, copy everything except the .git folder, and paste it into the Unity-Hydrogen-Horizons project's repository location.
