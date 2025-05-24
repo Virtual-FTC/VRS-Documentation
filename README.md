@@ -31,8 +31,8 @@ Blockly is a section in the programming page of vrs that lets people drag and dr
 ### Web Interface
 
 Communication between Unity & the rest of the web app is accomplished in two ways.
-Unity->Web: the .jslib files in the ConstructionKit set up javascript functions that usually do something like setlocalstorage to tell the web side what scene its in, what the telemetry is, and so on.
-Web->Unity: the web calls Unity.SendMessage to send messages to different unity scripts. Usually the VRS script. Telling it to load different scenes, and what the input power of the motors should be.
+- Unity->Web: the .jslib files in the ConstructionKit set up javascript functions that usually do something like setlocalstorage to tell the web side what scene its in, what the telemetry is, and so on.
+- Web->Unity: the web calls Unity.SendMessage to send messages to different unity scripts. Usually the VRS script. Telling it to load different scenes, and what the input power of the motors should be.
 
 #### In Unity
 
