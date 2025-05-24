@@ -30,6 +30,10 @@ Blockly is a section in the programming page of vrs that lets people drag and dr
 
 ### Web Interface
 
+Communication between Unity & the rest of the web app is accomplished in two ways.
+Unity->Web: the .jslib files in the ConstructionKit set up javascript functions that usually do something like setlocalstorage to tell the web side what scene its in, what the telemetry is, and so on.
+Web->Unity: the web calls Unity.SendMessage to send messages to different unity scripts. Usually the VRS script. Telling it to load different scenes, and what the input power of the motors should be.
+
 #### In Unity
 
 - **Encoder Action Manager(Robot Construction Kit)**: if the gamepad is not active, this component takes input from the javascript code from blockly and sends it to the motors of the players robot. It also records distance driven and sends that back to the blockly code.
