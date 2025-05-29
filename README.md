@@ -20,6 +20,12 @@ Right now we have:
 These packages are for the web/electron side. 
 - [RSM-CodeExecutionModule](https://github.com/Virtual-FTC/RSM-CodeExecutionModule) : its purpose is to keep all the unity<->electron communication & programming interfaces the same between projects.
 
+npm install
+git submodule init
+git submodule update
+npm start
+
+
 ### Electron
 [Electron](https://www.electronjs.org/) is a standalone app that is essentially chrome, but it puts all the web code in one spot that allows for testing on a local machine. the VRS-Electron app can be run by running ```npm install``` at the command line(only once), and then ```npm start```.  Video to look over after you load NodeJS  https://youtu.be/n2BzAl3uNYc and then this https://youtu.be/XiI0JMDsJes ****
 
