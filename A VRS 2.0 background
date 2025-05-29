@@ -2,7 +2,7 @@ the VRS 1.0 design Doc
   https://drive.google.com/file/d/1K_zGVQKhtXTy55upA_gN6bQZP8jF3CoG/view
 letian Image project 
   https://excalidraw.com/#json=eh8MTY-wcUnBHoi7-l0ZM,mH8zt8DYyjgxuP3mG0wHbg
-4 big projects ideas to get to runnng a program like ROADRuner in the VRS
+4 big projects ideas to get to runnng a program like RoAD runner-puer pursuit-path finding in the VRS
   Embed a java compiler and runner into the browser.
     We want to be able to write multiple java files, compile them, and run them all in the browser locally.
     This requires bundling the javac compiler (graalvm)
