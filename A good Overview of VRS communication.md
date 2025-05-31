@@ -12,3 +12,4 @@ Big Picture https://drive.google.com/file/d/1K_zGVQKhtXTy55upA_gN6bQZP8jF3CoG/vi
 
  encoder location   https://bit.ly/encoder-location-snap
 https://docs.google.com/document/d/16-BpegXGw4xLl2tmPH-K3aaxjM0pqFnLnJaHFeVeUYE/edit?usp=sharing
+An overview of communication in the VRS   https://tinyurl.com/2ya4oje7 picture
