@@ -6,7 +6,8 @@ Important Files
 -        UnityInstanceHandler.js (root folder of electron app)
 -        EncoderActionManager.cs (unity script)
  
-The Encoder Action Manager script defines functions that the electron app can call. All the instance handler script needs to do is know the name of the game object that holds the script to call the functions.
+The Encoder Action Manager script defines functions that the electron app can call. 
+ All the instance handler script needs to do is know the name of the game object that holds the script to call the functions.
  
 EXAMPLE
 In this example, the instance handler is sending the first motor of the robot a float value.
