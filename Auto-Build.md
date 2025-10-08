@@ -1,6 +1,7 @@
 For the main VRS Unity Sim, there is an auto build set up on both repos - the Web Side ( Electron ) , and the Unity side.
 
 Paths are here :     VRS-Unity/.github/workflows/main.yml
+
                      ElectronApp-CS/.github/workflows/main.yml
 
 These give Github instructions on what to do when someone pushes to the decode branch of Vrs-Unity, or to the Vrs-Electron repo.
